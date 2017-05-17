@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"
+    integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+    <meta charset="utf-8">
+    <title>{% block title %}base{% endblock %}</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'personal/style.css' %}" type="text/css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+<style>
+    li{
+    display: inline;
+    }
+</style>
+</head>
+<body>
+<nav class="navbar-fixed-top">
+    <ul class="nav nav-pills">
+  <li><a href="#home">Home</a></li>
+  <li><a href="#news">News</a></li>
+  <li><a href="#contact">Contact</a></li>
+  <li style="float:right"><a class="active" href="#about">About</a></li>
+</ul>
+</nav>
+<div class="container">
+    <h2 style="text-align: center;">Electronic ID Site</h2>
+    <p style="text-align: center;">
+        get you electronic identification info...
+    </p>
+</div>
+<header>
+    <h1>E-id login Login</h1>
+    {% if user_login.is_authenticated %}
+      Hi {{ user.username }}!
+      <a href="{% url 'logout' %}">logout</a>
+    {% else %}
+      <a href="{% url 'login' %}">login</a>
+    {% endif %}
+  </header>
+  <hr>
+{% block content %}
+
+{% endblock %}
+  <footer>
+  </footer>
+</body>
+</html>

@@ -1,0 +1,24 @@
+{% extends 'personal/base.html' %}
+
+{% block title %}login{% endblock %}
+
+
+{% block content %}
+<div id="register_bubble">
+ <h2>Welcome</h2>
+  <p>You can log in here</p>
+  <h2>login</h2>
+
+  <form action="{% url 'personal:login' %}" method="post">
+    {% csrf_token %}
+      <label name = "username">Username</label>
+      <input type = "text">
+      <label name = "password">Password</label>
+      <input type = "password">
+    <button type="submit">Login</button>
+  </form>
+</div>
+<!---
+
+-->
+{% endblock %}

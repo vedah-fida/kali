@@ -1,0 +1,10 @@
+{% extends 'personal/base.html' %}
+
+{% block title %}login{% endblock %}
+
+{% block content %}
+  <h2>Home</h2>
+<form action="{% url ' personal:log_out' %}">
+  <button type="submit">Logout</button>
+</form>
+{% endblock %}
